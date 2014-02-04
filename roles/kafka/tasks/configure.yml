@@ -4,3 +4,10 @@
   template: src=usr_local_etc_kafka_config_server.properties.j2 dest=/usr/local/etc/kafka/config/server.properties owner={{ kafka_user }} group={{ kafka_group }} mode=0644
   notify:
     - restart supervisor
+
+- name: Zookeeper | Update the zookeeper configuration
+  template: src=usr_local_etc_kafka_config_zookeeper.properties.j2 dest=/usr/local/etc/kafka/config/zookeeper.properties owner={{ kafka_user }} group={{ kafka_group }} mode=0644
+  template: src=var_zookeeper_myid.j2 dest=/var/zookeeper/myid owner={{ kafka_user }} group={{ kafka_group }} mode=0644
+
+  notify:
+    - restart supervisor
