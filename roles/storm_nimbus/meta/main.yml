@@ -1,5 +1,6 @@
 # file: roles/storm_nimbus/meta/main.yml
 
 dependencies:
+  - { role: zookeeper }
   - { role: storm_common }
   - { role: supervisor }

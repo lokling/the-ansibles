@@ -9,7 +9,7 @@
     - storm-supervisor
 
 - include: dependencies.yml
-- include: jzmq.yml
+#- include: jzmq.yml
 - include: user.yml
 - include: install.yml
 - include: configure.yml

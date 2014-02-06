@@ -1,3 +1,4 @@
+# {{ ansible_managed }}
 storm.zookeeper.servers:
 {% for server in storm_zookeeper_servers %}
   - {{server}}

@@ -7,9 +7,9 @@ storm_uid: 3060
 storm_gid: 3060
 
 storm_zookeeper_servers:
-  - "localhost"
+  - "dummy_default_localhost"
 storm_zookeeper_port: 2181
-storm_nimbus_host: "localhost"
+storm_nimbus_host: "dummy_default_localhost"
 storm_nimbus_childopts: "-Xmx1024m -Djava.net.preferIPv4Stack=true"
 storm_ui_childopts: "-Xmx768m -Djava.net.preferIPv4Stack=true"
 storm_supervisor_childopts: "-Djava.net.preferIPv4Stack=true"
@@ -21,4 +21,4 @@ storm_supervisor_slots_ports:
   - "6703"
 storm_local_dir: /app/storm
 storm_drpc_servers:
-  - "localhost"
+  - "dummy_default_localhost"
