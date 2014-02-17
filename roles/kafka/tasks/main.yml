@@ -9,3 +9,4 @@
 - include: configure.yml
 - include: supervise_broker.yml
 - include: supervise_zookeeper.yml
+- include: jmxtrans.yml
