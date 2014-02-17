@@ -9,3 +9,6 @@
   template: src=etc_supervisor.d_storm-ui.conf.j2 dest=/etc/supervisor.d/storm-ui.conf owner=root group=root mode=0644
   notify:
     - restart supervisor
+
+
+- include: jmxtrans.yml
