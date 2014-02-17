@@ -1,0 +1,5 @@
+
+- name: Storm | Install JMXtrans config
+  template: src=var_lib_jmxtrans_storm_nimbus.j2 dest=/var/lib/jmxtrans/storm_nimbus.json owner=jmxtrans group=jmxtrans mode=0644
+  notify:
+    - restart jmxtrans

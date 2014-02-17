@@ -1,0 +1,4 @@
+---
+
+- name: restart storm-supervisor
+  supervisorctl: name=storm-supervisor state=restarted

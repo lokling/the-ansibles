@@ -1,0 +1,11 @@
+---
+
+- name: restart storm-nimbus
+  supervisorctl: name=storm-nimbus state=restarted
+
+- name: restart storm-ui
+  supervisorctl: name=storm-ui state=restarted
+
+- name: restart zookeeper
+  supervisorctl: name=zookeeper state=restarted
+

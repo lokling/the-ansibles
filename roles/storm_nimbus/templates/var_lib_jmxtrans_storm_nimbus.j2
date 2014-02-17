@@ -1,0 +1,26 @@
+{
+    "servers": [
+        {
+            "port": "{{ jmx_port_nimbus }}",
+            "host": "{{ jmx_host }}",
+            "alias": "{{ hostname }}",
+            "queries": [
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": "{{ graphite_port }}",
+                                "host": "{{ graphite_host }}"
+                            }
+                        }
+                    ],
+                    "obj" : "java.lang:type=Memory",
+                    "resultAlias": "nimbus",
+                    "attr" : [ "HeapMemoryUsage", "NonHeapMemoryUsage" ]
+                }
+            ],
+            "numQueryThreads": 2
+        }
+    ]
+} 

@@ -1,0 +1,6 @@
+# file: roles/kafka/tasks/supervise_broker.yml
+
+- name: Kafka | Install JMXtrans config
+  template: src=var_lib_jmxtrans_kafka.j2 dest=/var/lib/jmxtrans/kafka.json owner=jmxtrans group=jmxtrans mode=0644
+  notify:
+    - restart jmxtrans

@@ -1,0 +1,68 @@
+{
+    "servers": [
+        {
+            "port": "{{ jmx_port }}",
+            "host": "{{ jmx_host }}",
+            "alias": "{{ hostname }}",
+            "queries": [
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": "{{ graphite_port }}",
+                                "host": "{{ graphite_host }}"
+                            }
+                        }
+                    ],
+                    "obj": "java.nio:type=BufferPool,name=direct",
+                    "resultAlias": "bufferPool.direct",
+                    "attr": [ "Count", "MemoryUsed", "Name", "ObjectName", "TotalCapacity" ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": "{{ graphite_port }}",
+                                "host": "{{ graphite_host }}"
+                            }
+                        }
+                    ],
+                    "obj": "java.nio:type=BufferPool,name=mapped",
+                    "resultAlias": "bufferPool.mapped",
+                    "attr": [ "Count", "MemoryUsed", "Name", "ObjectName", "TotalCapacity" ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": "{{ graphite_port }}",
+                                "host": "{{ graphite_host }}"
+                            }
+                        }
+                    ],
+                    "obj": "kafka:type=kafka.Log4jController",
+                    "resultAlias": "kafka.log4jController",
+                    "attr": [ "Loggers" ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": "{{ graphite_port }}",
+                                "host": "{{ graphite_host }}"
+                            }
+                        }
+                    ],
+                    "obj": "kafka:type=kafka.SocketServerStats",
+                    "resultAlias": "kafka.socketServerStats",
+                    "attr": [ "AvgFetchRequestMs", "AvgProduceRequestMs", "BytesReadPerSecond", "BytesWrittenPerSecond", "FetchRequestsPerSecond", "MaxFetchRequestMs", "MaxProduceRequestMs" , "NumFetchRequests" , "NumProduceRequests" , "ProduceRequestsPerSecond", "TotalBytesRead", "TotalBytesWritten", "TotalFetchRequestMs", "TotalProduceRequestMs" ]
+                }
+            ],
+            "numQueryThreads": 2
+        }
+    ]
+}
