@@ -1,7 +1,7 @@
 {
     "servers": [
         {
-            "port": "{{ jmx_port_worker }}",
+            "port": "1{{ item }}",
             "host": "{{ jmx_host }}",
             "alias": "{{ hostname }}",
             "queries": [

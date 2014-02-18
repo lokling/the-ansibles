@@ -1,8 +1,17 @@
 
-- name: Storm | Install JMXtrans config
+- name: Storm | Install JMXtrans config for supervisor
   template: src={{ item.src }} dest={{ item.dest }} owner=jmxtrans group=jmxtrans mode=0644
   with_items:
     - { src: "var_lib_jmxtrans_storm_supervisor.j2", dest: "/var/lib/jmxtrans/storm_supervisor.json" }
-    - { src: "var_lib_jmxtrans_storm_worker.j2", dest: "/var/lib/jmxtrans/storm_worker.json" }
+  notify:
+    - restart jmxtrans
+
+- name: Storm | Install JMXtrans config for workers
+  template: src="var_lib_jmxtrans_storm_worker.j2" dest="/var/lib/jmxtrans/storm_worker{{ item }}.json" owner=jmxtrans group=jmxtrans mode=0644
+  with_items:
+    - 6700
+    - 6701
+    - 6702
+    - 6703
   notify:
     - restart jmxtrans

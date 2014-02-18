@@ -13,10 +13,10 @@ storm_nimbus_host: "dummy_default_localhost"
 storm_nimbus_childopts: "-Xmx1024m -Djava.net.preferIPv4Stack=true  -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=14000"
 storm_ui_childopts: "-Xmx768m -Djava.net.preferIPv4Stack=true"
 storm_supervisor_childopts: "-Djava.net.preferIPv4Stack=true  -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=14001"
-storm_worker_childopts: "-Xmx768m -Djava.net.preferIPv4Stack=true  -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=14002"
+storm_worker_childopts: "-Xmx768m -Djava.net.preferIPv4Stack=true  -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1%ID%"
 jmx_port_nimbus: 14000
 jmx_port_supervisor: 14001
-jmx_port_worker: 14002
+jmx_port_worker: 1%ID% # Will translate to 16700, 16701 and so on
 
 storm_supervisor_slots_ports:
   - "6700"
