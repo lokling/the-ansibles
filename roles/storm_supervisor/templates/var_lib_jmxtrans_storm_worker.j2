@@ -3,7 +3,7 @@
         {
             "port": "1{{ item }}",
             "host": "{{ jmx_host }}",
-            "alias": "{{ hostname }}",
+            "alias": "{{ hostname }}-worker{{ item }}",
             "queries": [
                 {
                     "outputWriters": [
