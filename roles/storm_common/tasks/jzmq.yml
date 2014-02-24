@@ -1,5 +1,6 @@
 # file: roles/storm_common/tasks/jzmq.yml
 
+# TODO - need to wipe temp and re-fetch jzmq at each run - rerun on slave2
 - name: Storm | (jzmq) Download the jzmq source from the git repo
   git: repo=https://github.com/nathanmarz/jzmq.git dest=/tmp/jzmq
 

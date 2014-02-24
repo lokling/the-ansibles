@@ -1,6 +1,6 @@
 # file: roles/storm_common/defaults/main.yml
 
-storm_version: 0.9.0-wip21
+storm_version: 0.9.0.1
 storm_user: storm
 storm_group: storm
 storm_uid: 3060
