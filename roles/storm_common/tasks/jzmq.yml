@@ -1,8 +1,7 @@
 # file: roles/storm_common/tasks/jzmq.yml
 
-# TODO - need to wipe temp and re-fetch jzmq at each run - rerun on slave2
 - name: Storm | (jzmq) Download the jzmq source from the git repo
-  git: repo=https://github.com/nathanmarz/jzmq.git dest=/tmp/jzmq
+  git: repo=https://github.com/nathanmarz/jzmq.git dest=/tmp/jzmq force=yes
 
 - name: Storm | (jzmq) Patch jzmq install for ubuntu - pt. 1
   shell: sed -i 's/classdist_noinst.stamp/classnoinst.stamp/g' src/Makefile.am chdir=/tmp/jzmq
