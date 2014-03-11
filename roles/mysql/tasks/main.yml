@@ -1,4 +1,7 @@
 # file: roles/mysql/tasks/main.yml
+- fail: msg="Password not set mysql_root_password"
+  when: mysql_root_password is not set
+
 
 - include: install.yml
 - include: configure.yml

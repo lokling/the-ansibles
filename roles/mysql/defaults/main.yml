@@ -1,6 +1,6 @@
 # file: roles/mysql/defaults/main.yml
 
-mysql_root_password: 'password'
+#mysql_root_password: 'password'
 
 mysql_max_allowed_packet: '128M'
 mysql_character_set_server: 'utf8'
