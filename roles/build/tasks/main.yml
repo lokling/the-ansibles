@@ -1,4 +1,9 @@
 # file: roles/build/tasks/main.yml
+- name: Build | Apt update
+  apt: update_cache=yes
+
+- name: Build | Fix apt
+  command: apt-get -f -y install
 
 - name: Build | Make sure essential build/dev tools and compilers are installed/up-to-date
   apt: pkg={{ item }}

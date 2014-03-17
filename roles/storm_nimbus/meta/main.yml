@@ -1,6 +1,8 @@
 # file: roles/storm_nimbus/meta/main.yml
 
 dependencies:
+  - { role: build }
   - { role: zookeeper }
   - { role: storm_common }
   - { role: supervisor }
+  - { role: jmxtrans }

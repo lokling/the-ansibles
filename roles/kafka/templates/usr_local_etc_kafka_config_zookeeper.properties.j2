@@ -2,7 +2,10 @@ tickTime=2000
 clientPort=2181
 initLimit=5
 syncLimit=2
-server.1={{ server1 }}:2888:3888
-server.2={{ server2 }}:2888:3888
-server.3={{ server3 }}:2888:3888
+
+# All servers from kafka-servers in inventory
+{% for host in groups['kafka-servers'] %}
+server.{{ loop.index }}={{ hostvars[host]['ansible_all_ipv4_addresses'][0] }}:2888:3888
+{% endfor %}
+
 dataDir={{ dataDir }}

@@ -1,4 +1,7 @@
 ---
 
+- name: make sure supervisor is running
+  service: name=supervisor state=started
+
 - name: restart storm-supervisor
   supervisorctl: name=storm-supervisor state=restarted

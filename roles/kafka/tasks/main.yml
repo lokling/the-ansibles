@@ -10,3 +10,6 @@
 - include: supervise_broker.yml
 - include: supervise_zookeeper.yml
 - include: jmxtrans.yml
+
+- name: Kafka | Start supervisor and kafka
+  service: name=supervisor state=restarted
