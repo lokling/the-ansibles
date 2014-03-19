@@ -1,4 +1,6 @@
 # {{ ansible_managed }}
+
+storm.local.hostname: {{ inventory_hostname }}
 storm.zookeeper.servers:
     - {{ hostvars[groups['storm-nimbus'][0]]['inventory_hostname'] }}
 
