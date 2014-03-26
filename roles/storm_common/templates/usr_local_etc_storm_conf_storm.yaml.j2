@@ -1,5 +1,8 @@
 # {{ ansible_managed }}
 
+# Default sample rate is 0.05, this is for getting more accurate readings from storm ui debugging
+topology.stats.sample.rate: 1
+
 storm.local.hostname: {{ inventory_hostname }}
 storm.zookeeper.servers:
     - {{ hostvars[groups['storm-nimbus'][0]]['inventory_hostname'] }}
